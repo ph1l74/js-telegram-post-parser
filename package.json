@@ -1,0 +1,36 @@
+{
+    "name": "js-telegram-post-parser",
+    "version": "1.0.0",
+    "description": "JavaScript Telegram Post Parser",
+    "main": "index.js",
+    "scripts": {
+        "test": "test",
+        "run:dev": "nodemon app.js"
+    },
+    "nodemonConfig": {
+        "ignore": ["data/*"]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ph1l74/js-telegram-post-parser.git"
+    },
+    "keywords": [
+        "telegram",
+        "nodejs",
+        "js",
+        "javascript"
+    ],
+    "author": "Filat Astakhov (ph1l74)",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ph1l74/js-telegram-post-parser/issues"
+    },
+    "homepage": "https://github.com/ph1l74/js-telegram-post-parser#readme",
+    "dependencies": {
+        "@mtproto/core": "6.3.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "nodemon": "^3.0.1"
+    }
+}
