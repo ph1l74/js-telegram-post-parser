@@ -5,12 +5,26 @@ class PostsController {
   async getPost(req, res) {
     try {
       const { channelId, postId } = req.params;
-      const result = await api.call("messages.Messages", {
-        channel: channelId,
-        id: postId,
-      });
+      const result = await api.call(
+        "channels.getMessages",
+        {
+          channel: {
+            _: "inputChannel",
+            channel_id: channelId,
+          },
+          id: [
+            {
+              _: "inputMessageID",
+              id: postId,
+            },
+          ],
+        },
+        { syncAuth: false }
+      );
+      res.json(result);
       return result;
     } catch (error) {
+      res.json(error);
       errorLogger(error);
     }
   }
